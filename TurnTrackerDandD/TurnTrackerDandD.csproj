@@ -57,6 +57,12 @@
     <Compile Include="Views\AddCombatantView.xaml.cs">
       <DependentUpon>AddCombatantView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DMActionView.xaml.cs">
+      <DependentUpon>DMActionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InitiativeGridView.xaml.cs">
+      <DependentUpon>InitiativeGridView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\InitiativeListView.xaml.cs">
       <DependentUpon>InitiativeListView.xaml</DependentUpon>
     </Compile>
@@ -73,6 +79,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\AddCombatantView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DMActionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InitiativeGridView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -109,5 +123,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Media\icon1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

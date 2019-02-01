@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using TurnTrackerDandD.Models;
 
 namespace TurnTrackerDandD.ViewModel
@@ -22,14 +23,16 @@ namespace TurnTrackerDandD.ViewModel
             set { combatants = value; }
         }
 
+       
+
 
         public void PopulateTestData()
         {
 
             Random r = new Random();
-            for (int i = 0; i<6; i++)
+            for (int i = 0; i < 6; i++)
             {
-                
+
                 int initiative = r.Next(0, 30);
                 Combatant combatant = new Combatant
                 {
@@ -45,11 +48,16 @@ namespace TurnTrackerDandD.ViewModel
 
         }
 
-        public void AddCombatant(string name, int initiative)
+        
+    
+
+    public void AddCombatant(string name, int initiative)
         {
             Combatant combatant = new Combatant { Name = name, Initiative = initiative };
             Combatants.Add(combatant);
             Combatants.Sort(x => x.Initiative);
+            
+            
         }
        
 

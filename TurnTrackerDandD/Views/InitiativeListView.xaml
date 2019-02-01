@@ -10,23 +10,42 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        
-        <ListView x:Name="IntitiativeList" Grid.Row="0"  ItemsSource="{Binding Combatants}" FontSize="24">
+        <Border Grid.Row="0" CornerRadius="15" BorderBrush="Blue" BorderThickness="2">
+        <ListView x:Name="IntitiativeList"   ItemsSource="{Binding Combatants}" FontSize="24" >
+            <ListView.Resources>
+                <Style TargetType="GridViewColumnHeader">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                </Style>
+            </ListView.Resources>
             <ListView.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <TextBlock Text="Intiative: " />
-                        <TextBlock Text="{Binding Path=Initiative}" FontWeight="Bold" />
-                        <TextBlock Text=", " />
-                        <TextBlock Text="Name: " />
-                        <TextBlock Text="{Binding Path=Name}" FontWeight="Bold" />
-                    </WrapPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                    <DataTemplate>
+                        <Grid x:Name="templateGrid">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Intiative: " />
+                            <TextBlock Grid.Column="1" Text="{Binding Path=Initiative}" FontWeight="Bold" />
+                            <TextBlock Grid.Column="2" Text=", " />
+                            <TextBlock Grid.Column="3" Text="Name: " />
+                            <TextBlock Grid.Column="4" Text="{Binding Path=Name}" FontWeight="Bold" />
+                            <TextBlock Grid.Column="5" Text="|| Banes: " />
+                            <!--<Image Grid.Column="6" Source="../Media/icon1.png" Height="25" Width="25" />-->
 
-        <Button Grid.Row="1" x:Name="combatButton" Content="Start Combat" Click="Button_Click" FontSize="24" Height="50" Width="150" />
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+        </ListView>
+        </Border>
+       
+        <Button Grid.Row="2" x:Name="combatButton" Content="Start Combat" Click="Button_Click" FontSize="24" Height="50" Width="150" />
 
     </Grid>
 </UserControl>

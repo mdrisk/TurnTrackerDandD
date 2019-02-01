@@ -23,6 +23,7 @@ namespace TurnTrackerDandD.Views
         public InitiativeListView()
         {
             InitializeComponent();
+            Image img = new Image() { Source = new BitmapImage(new Uri("../Media/icon1.PNG")) }; 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
